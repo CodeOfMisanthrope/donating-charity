@@ -7,9 +7,8 @@ import {Component} from "~core/Component.js";
  */
 
 /**
- * @typedef State
+ * @typedef BtnSubmitState
  * @property {boolean} isActive
- * @private
  */
 
 /**
@@ -17,7 +16,7 @@ import {Component} from "~core/Component.js";
  */
 export default class BtnSubmit extends Component {
   /**
-   * @type State
+   * @type BtnSubmitState
    */
   state;
 
@@ -27,6 +26,9 @@ export default class BtnSubmit extends Component {
    */
   constructor(props) {
     super(props);
+    this.state = this.observeState({
+      isActive: false
+    });
   }
 
   /**
@@ -40,6 +42,17 @@ export default class BtnSubmit extends Component {
     this.$rootElement.textContent = props.text;
     if (!props.isActive) {
       this.$rootElement.setAttribute('disabled', '');
+    }
+  }
+
+  onStateChange(prop, newVal, oldVal) {
+    if (prop === 'isActive') {
+      if (newVal) {
+        this.$rootElement.removeAttribute('disabled');
+
+      } else {
+        this.$rootElement.setAttribute('disabled', '');
+      }
     }
   }
 };
