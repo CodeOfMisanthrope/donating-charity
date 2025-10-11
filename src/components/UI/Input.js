@@ -1,8 +1,8 @@
 import {Component} from "~core/Component.js";
 
 /**
- * @typedef State
- * @private
+ * @typedef InputState
+ * @property {string} value
  */
 
 /**
@@ -18,7 +18,7 @@ import {Component} from "~core/Component.js";
  */
 export default class Input extends Component {
   /**
-   * @type State
+   * @type InputState
    */
   state;
 
