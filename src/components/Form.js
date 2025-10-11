@@ -4,7 +4,8 @@ import BtnSubmit from "~components/UI/BtnSubmit.js";
 
 /**
  * @typedef FormState
- * @property {string} valAmount
+ * @property {Input} inputNumber
+ * @property {BtnSubmit} btnSubmit
  */
 
 /**
@@ -12,11 +13,6 @@ import BtnSubmit from "~components/UI/BtnSubmit.js";
  * @extends Component
  */
 export class Form extends Component {
-  /**
-   * @type FormState
-   */
-  state;
-
   constructor(props) {
     super(props);
   }
@@ -25,35 +21,39 @@ export class Form extends Component {
     this.$rootElement = document.createElement('form');
     this.$rootElement.className = 'donate-form';
 
+    /**
+     * @type FormState
+     */
+    this.state = {};
+
     const inputNumber = new Input({
       labelText: "Введите сумму в $",
       type: "number",
       name: "amount"
     });
+    this.state.inputNumber = inputNumber;
     this.$rootElement.appendChild(inputNumber.$rootElement);
 
     const btnSubmit = new BtnSubmit({
       text: "Задонатить",
       isActive: false
     });
+    this.state.btnSubmit = btnSubmit;
     this.$rootElement.appendChild(btnSubmit.$rootElement);
-
+    console.log(this.state);
     this.initEvents(inputNumber.$rootElement, btnSubmit.$rootElement);
   }
 
   initEvents($input, $btnSubmit) {
+    console.log(this);
+    console.log(this.state);
     $input.addEventListener('input', this.handleInput.bind(this));
     $btnSubmit.addEventListener('click', this.handleSubmit.bind(this));
   }
 
   handleInput(evt) {
     const val = evt.target.value;
-    console.log('input', val);
-    if (val.length > 0) {
-
-    } else {
-
-    }
+    this.state.btnSubmit.state.isActive = val.length > 0;
   }
 
   handleSubmit(evt) {
