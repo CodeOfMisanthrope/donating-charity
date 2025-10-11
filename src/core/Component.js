@@ -1,6 +1,14 @@
+/**
+ * Класс базовой логики компонента, от которого наследуется каждый компонент.
+ */
 export class Component {
   props;
+
   state;
+
+  /**
+   * @type HTMLElement
+   */
   $rootElement;
 
   constructor(props = {}) {
