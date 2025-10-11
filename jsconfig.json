@@ -10,6 +10,9 @@
       "~core/*": [
         "src/core/*"
       ],
+      "~utils/*": [
+        "src/utils/*"
+      ],
       "~assets/*": [
         "assets/*"
       ]

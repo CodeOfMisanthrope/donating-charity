@@ -11,6 +11,7 @@ const config = defineConfig({
       "~": path.resolve(dirname, "src"),
       "~components": path.resolve(dirname, "src", "components"),
       "~core": path.resolve(dirname, "src", "core"),
+      "~utils": path.resolve(dirname, "src", "utils"),
       "~assets": path.resolve(dirname, "assets"),
     }
   }
