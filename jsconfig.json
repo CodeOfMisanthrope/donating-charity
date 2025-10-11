@@ -4,6 +4,12 @@
       "~/*": [
         "src/*"
       ],
+      "~components/*": [
+        "src/components/*"
+      ],
+      "~core/*": [
+        "src/core/*"
+      ],
       "~assets/*": [
         "assets/*"
       ]

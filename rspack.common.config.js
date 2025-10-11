@@ -9,6 +9,8 @@ const config = defineConfig({
 
     alias: {
       "~": path.resolve(dirname, "src"),
+      "~components": path.resolve(dirname, "src", "components"),
+      "~core": path.resolve(dirname, "src", "core"),
       "~assets": path.resolve(dirname, "assets"),
     }
   }
