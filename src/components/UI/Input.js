@@ -2,7 +2,7 @@ import {Component} from "~core/Component.js";
 
 /**
  * @typedef InputState
- * @property {string} value
+ * @property {string} val
  */
 
 /**
@@ -28,6 +28,9 @@ export default class Input extends Component {
    */
   constructor(props) {
     super(props);
+    this.state = {
+      val: ""
+    };
   }
 
   /**
