@@ -24,7 +24,7 @@ export class Component {
   observeState(init) {
     return new Proxy(init, {
       set: (target, prop, val) => {
-        console.log(target, prop, val);
+        // console.log(target, prop, val);
         const oldVal = target[prop];
         if (oldVal !== val) {
           target[prop] = val;
