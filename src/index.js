@@ -1,3 +1,8 @@
-import app from "~/app.js";
+// import { App } from '~/components/App';
+import { DemoCounter } from '~/components/Demo/DemoCounter';
+import '~/index.css';
 
-app();
+document.addEventListener('DOMContentLoaded', function () {
+  // document.body.appendChild(new App().$rootElement);
+  document.body.appendChild(new DemoCounter({ title: 'App counter' }).$rootElement);
+});
