@@ -1,4 +1,8 @@
 export class Component {
+  props;
+  state;
+  $rootElement;
+
   constructor(props = {}) {
     this.props = props;
     this.state = {};
