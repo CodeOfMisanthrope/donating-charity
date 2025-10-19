@@ -59,9 +59,9 @@ export class Form extends Component {
   handleInput(evt) {
     const val = evt.target.value;
     if (val === "") {
-      this.state.btnSubmit.setDisabled()
+      this.state.btnSubmit.setDisabled();
     } else {
-      this.state.btnSubmit.removeDisabled()
+      this.state.btnSubmit.removeDisabled();
     }
     this.state.inputNumber.state.val = val;
   }
@@ -69,6 +69,8 @@ export class Form extends Component {
   handleSubmit(event) {
     event.preventDefault();
     const val = this.state.inputNumber.state.val.trim();
+    this.state.inputNumber['$rootElement'].firstElementChild.value = "";
+    this.state.btnSubmit.setDisabled();
     this.props.onItemCreate(val);
   }
 }
