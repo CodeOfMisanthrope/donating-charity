@@ -26,9 +26,9 @@ export default class BtnSubmit extends Component {
    */
   constructor(props) {
     super(props);
-    this.state = this.observeState({
+    this.state = {
       isActive: false
-    });
+    };
   }
 
   /**
@@ -45,14 +45,11 @@ export default class BtnSubmit extends Component {
     }
   }
 
-  onStateChange(prop, newVal, oldVal) {
-    if (prop === 'isActive') {
-      if (newVal) {
-        this.$rootElement.removeAttribute('disabled');
+  removeDisabled() {
+    this.$rootElement.removeAttribute('disabled');
+  }
 
-      } else {
-        this.$rootElement.setAttribute('disabled', '');
-      }
-    }
+  setDisabled() {
+    this.$rootElement.setAttribute('disabled', '');
   }
 };

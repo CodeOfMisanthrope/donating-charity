@@ -47,7 +47,7 @@ export default class Input extends Component {
     $input.type = props.type;
     $input.name = props.name;
     $input.max = "100";
-    $input.max = "1";
+    $input.min = "1";
     $input.setAttribute('required', '');
     $label.appendChild($input);
   }
